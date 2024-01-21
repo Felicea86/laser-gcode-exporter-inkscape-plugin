@@ -1,108 +1,111 @@
-About This Project
+Über dieses Projekt
 ------------------
-This project was intended to build and all in one exporting plugin for laser cutters and Inkscape 0.91. It has not been tested on lower versions of Inkscape but may work..
-The plugin builds gcode that is compatible with a fork of Marlin designed to run on laser cutters found at https://github.com/TurnkeyTyranny/buildlog-lasercutter-marlin .
+Der Zweck dieses Projekts war die Erstellung eines All-in-One-Export-Plugin für Laserschneider und Inkscape 0.91. Es wurde nicht auf niedrigeren Versionen getestet, funktioniert aber möglicherweise..
 
-You can contact me via email at : 394ad2f@gmail.com, I check my email daily usually.
+Das Plugin erstellt GCode, der mit einem Marlin-Fork kompatibel ist, der für die Ausführung auf Laserschneidern entwickelt wurde und unter https://github.com/TurnkeyTyranny/buildlog-lasercutter-marlin zu finden ist.
 
-Donations
+Sie erreichen mich per Mail unter : 394ad2f@gmail.com. Ich prüfe meine Mails für gewöhnlich täglich.
+
+Spenden
 ---------
-Find this software useful? Donations are gratefully appreciated. 
+Finden Sie dieses Projekt nützlich? Spenden werden dankbar angenommen. 
 
-* Paypal to 394ad2f@gmail.com
-* Bitcoins to 16TFmnFyvDA8Q6TTakvvhargy8c89Rb3cj
+* Paypal an 394ad2f@gmail.com
+* Bitcoins an 16TFmnFyvDA8Q6TTakvvhargy8c89Rb3cj
 
 Installation
 ------------
 
-Copy the files turnkeylaser.py and turnkeylaser.inx into your Inkscape extensions folder -> C:\Program Files\Inkscape\share\extensions
-Fire up inkscape and you will find the plugin under Extensions -> Export -> Turnkey Laser Exporter.
+Kopieren Sie die Dateien "turnkeylaser.py" und "turnkeylaser.inx" in Ihren Inkscape Extensions-Ordner -> C:\Program Files\Inkscape\share\extensions.
+Starten sie Inkscape und Sie finden das Plugin unter Extensions -> Export -> Turnkey Laser Exporter.
 
-This script relies on a more advanced version of the PIL library than Inkscape for windows ships with. As such you need to follow these steps for windows installs of Inkscape 0.91 
-You have two options to follow, choose the one you prefer.
+Da dieses Skript auf einer fortgeschritteneren Version der PIL-Bibliothek basiert, als im Lieferumfang von Inkscape für Windows enthalten ist,
+müssen Sie für Windows-Installationen von Inkscape 0.91 folgende Schritte befolgen.
+Sie haben zwei Möglichkeiten: Wählen Sie diejenige aus, die Ihnen am meisten zusagt.
 
 1) You can alternatively install python on your system, or use my precompiled version. To install python natively :
-* visit https://www.python.org/downloads/ and download python 2.7.9 32 bit version (https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi) and install it to C:\Python27\ . Select the option to add Python to your path during install.
-* In the folder : C:\Program Files\Inkscape you will need to rename the folder "python" to "python-old" so it uses the new system install instead.
-* Open up the command line by pressing windows key+r and typing in 'cmd' without the quotes then press enter.
-* From the command line, run this command : pip install wheel
-* If you get an error message that pip cannot be found on your system, then your windows path is incorrect. Run this command, without the quotes "set PATH=%PATH%;C:\Python27\;C:\Python27\Scripts" and then repeat the above step.
-* Download the Python Image Library from this repo : https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/PIL/Pillow-2.7.0-cp27-none-win32.whl and place it in an easy to navigate to folder, such as your C:\ folder. Alternatively you can download the latest version of PIL from http://www.lfd.uci.edu/~gohlke/pythonlibs/#pil
-* Start the command line by pressing windows key+r and typing in cmd and pressing enter.
-* From the command line, navigate to where you placed that file. If for example you placed it in the C drive you would type without the quotes
+* besuchen Sie https://www.python.org/downloads/ und laden Sie die 32-Bit Version von Python herunter (https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi) und installieren sie
+  unter C:\Python27\ . Wählen Sie während der Installation die Option, Python zu Ihrem Pfad hinzuzufügen.
+* Im Ordner : C:\Program Files\Inkscape müssen Sie den Ordner "python" in "python-old" umbenennen, damit stattdessen die neue Systeminstallation verwendet wird.
+* Drücken Sie die "Windows-Taste" + "R", um die Befehlszeile zu öffnen, geben Sie "cmd" (ohne Anführungszeichen) ein und drücken Sie die Eingabetaste.
+* Führen Sie in der Befehlszeile folgenden Befehl aus: pip install wheel
+* Wenn Sie eine Fehlermeldung erhalten, dass pip auf Ihrem System nicht gefunden werden kann, ist Ihr Windows-Pfad falsch. Führen Sie diesen Befehl aus (ohne Anführungszeichen) "set PATH=%PATH%;C:\Python27\;C:\Python27\Scripts" und wiederholen Sie dann den obigen Schritt.
+* Laden Sie die Python-Bibliothek von diesem Repo herunter: https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/PIL/Pillow-2.7.0-cp27-none-win32.whl und platzieren Sie sie in einem für Sie einfach zu navigierenden Order, z.B. Ihrem C:\ -Ordner. Alternativ können Sie auch die neuste Version von PIL unter http://www.lfd.uci.edu/~gohlke/pythonlibs/#pil herunterladen.
+* Starten Sie die Befehlszeile, indem Sie "Windows-Taste" + "R" drücken, "cmd" eingeben und Eingabe drücken. 
+* Navigieren Sie von der Befehlszeile aus zu dem Ort, an dem Sie die Datei abgelegt haben. Wenn Sie sie z.B. im Laufwerk C abgelegt haben, geben Sie ohne Anführungszeichen ein:
 * "cd c:\"
 * "pip install Pillow-2.7.0-cp27-none-win32.whl"
-* You also need to install the libxml library, from the command line run this command without the quotes.
+* Sie müssen außerdem die libxml-Bibliothek installieren. Führen Sie dazu in der Befehlszeile folgenden Befehl (ohne Anführungszeichen) aus:
 * "easy_install lxml"
-* You are done, launch inkscape and run the plugin!
+* Fertig! Starten Sie Inkscape und führen Sie das Plugin aus!
 
 ![alt tag](https://raw.githubusercontent.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/master/python_2.7_install.png)
 ![alt tag](https://raw.githubusercontent.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/master/command_line_install.png)
 
 
-2) If you are using 32 bit inkscape you can potentially use my precompiled version of 32 bit python 2.7.9 with all the needed libraries follow these steps, however this works for some people and not for others. Unsure why :
-* Download my updated windows version of python from : https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/files/Python27.rar
-* Navigate to C:\Program Files\Inkscape and rename the folder "python" to "python-old"
-* Extract the folder 'Python27' from the archive you downloaded to C:\Program Files\Inkscape and rename it to 'python' (Note the lower case p)
-* You are done, launch inkscape and run the plugin!
-* If you run the export plugin and you don't get a popup diagnostic log telling you which items were exported successfully then unfortunately you need to install Python manually as described below in option #2
+2) Wenn Sie 32-Bit Inkscape verwenden, können Sie möglicherweise meine vorkomplilierte Version von 32-Bit-Python mit allen erforderlichen Bibliotheken verwenden. Beolgen Sie folgende Schritte. Dies funktioniert allerdings für einige Leute, für andere jedoch nicht, keine Ahnung warum:
+* Laden Sie meine aktualisierte Windows-Version von Python herunter: https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/files/Python27.rar
+* Navigieren sie nach C:\Program Files\Inkscape und benennen Sie den Ordner "python" in "python-old"
+* Extrahieren sie den Ordner "Python27" aus dem heruntergeladenen Archiv nach C:\Program Files\Inkscape und benennen Sie ihn in "python" um (beachten Sie den Kleinbuchstaben "p")
+* Fertig! Starten Sie Inkscape und führen Sie das Plugin aus!
+* Wenn Sie das Export-Plugin ausführen und kein Popup-Diagnoseprotokoll mit der Meldung angezeigt wird, welche Elemente erfolgreich exportiert wurden, müssen Sie Python leider manuell installieren wie unten in Option #2 beschrieben.
 
 Linux Installation
 ------------------
-More fleshed out instructions to come at a later date. Essentially just install the PIL library through yum or apt-get and place the 2 script files (.py and .inx) into your extensions directory.
+Ausführlichere Anweisungen folgen zu einem späteren Zeitpunkt. Im wesentlichen installieren Sie einfach die PIL-Bibliothek über yum oder apt-get und legen Sie die beiden Skriptdateien (.py and .inx) in Ihrem Erweiterungsverzeichnis ab.
 
-Usage and Setup
+Verwendung und Setup
 ---------------
-I recommend starting with this cutting surface and doing your designs in it. Its setup to match the size of the K40 Laser cutter bed : https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/designs/cutting_surface.svg
+Ich empfehle, mit dieser Schnittföäche zu beginnen und Ihre Entwürfe darin anzufertigen. Seine Einrichtung ist auf die Größe des K40-Laserschneidbretts abgestimmt: https://github.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/blob/master/designs/cutting_surface.svg
 
 
-Alternatively if you're setting up your own new inkscape job first press CTRL+Shift+d, choose the tab called 'page' and set your project units in the 'custom size' area to be 'px'. You can set the 'Default Units' option to be mm, inch or px. The 'Default Units' are the ones displayed on your rulers.
+Wenn Sie alternativ Ihren eigenen neuen Inkscape Auftrag einrichten, drücken Sie zunächst STRG+UMSCHALT+D, wählen Sie die Registerkarte "Seite" und stellen Sie Ihre Projekteinheiten im Bereich "Benutzerdefinierte Größe" auf "px" ein. Sie können die Option "Standardeinheiten" auf mm, Zoll oder px einstellen. Die "Standardeinheiten" werden auf Ihren Linealen angezeigt.
 
-Name your layer in Inkscape like: 10 [feed=600,ppm=40]
+Geben Sie Ihrer Ebene in Inkscape einen Namen wie: 10 [feed=600,ppm=40]
 
-This will set the power level to 10%, the feedrate to 600mm per minute and will fire at 40 pulse per millimetre in 60us duration pulses. PPM is ignored for rasters.
-The ppm option is optional, if you do not specify it then the laser will default to continuous wave mode.
-If you do not name your layer in this way then the script will use the default settings specified in the dialog box.
+Dadurch wird die Leistungsstufe auf 10% eingestellt, die Vorschubgeschwindigkeit auf 600 mm pro Minute und es wird mit 40 Impulsen mit einer Dauer von 60 us abgefeuert. Für Raster wird PPM ignoriert.
+Die Option "ppm" ist optional. Wenn Sie sie nicht angeben, wechselt der Laser standardmäßig in den Dauerstrichmodus.
+Wenn Sie Ihre Ebene nicht auf diese Weise benennen, verwendet das Skript die im Dialogfeld festgelegten Standardeinstellungen.
 
 
-When you're ready to export your objects, images or paths just select the items you would like to be exported by dragging over them or holding shift to select multiple and then run the plugin under under Extensions Menu -> Export -> Turnkey Laser Exporter. 
+Wenn Sie bereit sind, Ihre Objekte, Bilder oder Pfade zu exportieren, wählen Sie einfach die Elemente aus, die Sie exportieren möchten, indem sie darüber ziehen oder die Umschalttaste gedrückthalten, um mehrere auszuwählen und dann das Plugin unter Erweiterungsmenü -> Exportieren -> Turnkey Laser Exporter ausführen. 
 ![alt tag](https://raw.githubusercontent.com/TurnkeyTyranny/laser-gcode-exporter-inkscape-plugin/master/instructions.png)
 
 
-Sending the file to your laser
+Die Datei an Ihren Laser senden
 ------------------------------
-You can send the file to your laser by serial (USB cable) or SD memory card. 
+Sie können die Datei seriell (USB-Kabel) oder über eine SD-Speicherkarte an Ihren Laser senden.
 
-1) Via USB cable
-* Download repetier host and install it on your PC - http://www.repetier.com/download/
-* Open the software and set the port of your laser in the options. It will typically be COM7 - otherwise it's the same as what your programmed your Arduino on originally. The port speed should be set to 115200
-* Press the connect button, it will turn green.
-* Open your gcode file you created earlier and press the print button. Your laser will now burn your instruction set.
+1) Über USB-Kabel
+* Laden Sie Repetier Host herunter und installieren Sie es auf Ihrem PC - http://www.repetier.com/download/
+* Öffnen Sie die Software und legen Sie in den Optionen den Anschluss Ihres Lasers fest. Normalerweise handelt es sich dabei um COM7 - ansonsten ist es dasselbe, auf dem Sie Ihren Arduino ursprünglich programmiert haben. Die Portgeschwindigkeit sollte auf 115200 eingestellt sein.
+* Drücken Sie die Verbindungstaste. Diese wird grün.
+* Öffnen Sie die zuvor erstellte gCode-Datei und klicken Sie auf die Schaltfläche "Drucken". Ihr Laser brennt nun Ihren Befehlssatz.
 
 
-Alternatively you can use pronterface http://www.pronterface.com/index.html#download . You must ensure you check the box for Pronterface under 'Advanced' tab in the exporter plugin. It is checked by default.
+Alternativ können Sie pronterface verwenden http://www.pronterface.com/index.html#download . Sie müssen sicherstellen, dass Sie das Kontrollkästchen für Pronterface auf der Registerkarte "Erweitert" im Exporter-Plugin aktivieren. Es ist standardmäßig aktiviert.
 
-2) Via SD Memory card
-* Place the file onto your SD card
-* Insert it into your ramps SD card reader.
-* Select the file from the ramps LCD menu and print.
+2) Über SD_Speicherkarte
+* Plazieren Sie die Datei auf Ihrer SD-Karte.
+* Stecken Sie die SD-Karte in den SD-Kartenleser Ihres Ramps.
+* Wählen Sie die Datei aus dem LCD-Menü des Ramps aus und drucken Sie sie aus.
 
-Keyboard Shortcut
+Tastaturkürzel
 -----------------
 
-You may find it handy to assign the extension to a keyboard shortcut. 
-Include something like the following line to your inkscape keys 
-preferences file (this will bind the plugin to Ctrl+\):
+Es kann hilfreich sein, die Erweiterung einer Tastenkombination zuzuweisen. 
+Fügen Sie Ihren Inkscape-Schlüsseln etwa die folgende Zeile hinzu 
+preferences file (dadurch wird das Plugin an STRG+\ gebunden):
 
 <bind key="backslash" modifiers="Ctrl" action="org.thinkhaus.filter.thlaser"
 display="true"/>
 
-You can find your keyboard preferences file:
+Sie finden Ihre Tastatureinstellungsdatei:
 
-* On Linux: ~/.config/inkscape/keys/default.xml
+* Unter Linux: ~/.config/inkscape/keys/default.xml
 * Windows:  %UserProfile%\Application Data\Inkscape\keys\default.xml
 
-If that file doesn't exist, create it and include the following:
+Wenn diese Datei nicht existiert, erstellen Sie sie und fügen Sie folgendes ein:
 
 <?xml version="1.0"?>
 <keys name="My Keys">
@@ -111,11 +114,13 @@ display="true"/>
 </keys>
 
 
-Attribution
+Quellenangabe
 --------------------
-The project is built on work by other people, thanks go out to the effort they put in before me.
-Thanks to work by https://github.com/ajfoul , Thinkhaus and Lansing Makers Network
-This script is released under the license GPL v2.
+Das Projekt basiert auf der Arbeit anderer Leute, der Dank geht an die Mühe, die sie vor mir geleistet haben.
+
+Dank der Arbeit von https://github.com/ajfoul , Thinkhaus und Lansing Makers Network.
+
+Dieses Skript wird unter der Lizenz GPL v2 veröffentlicht.
 
 Change log
 --------------------
